@@ -11,7 +11,7 @@ jobs:
         with:
           ref: master
       - name: ZAP Scan
-        uses: zapproxy/action-baseline@v0.6.1
+        uses: zaproxy/action-baseline@v0.6.1
         with:
           dockername: 'owasp/zap2docker-stable'
           target: 'http://testphp.vulnweb.com/'
