@@ -7,12 +7,13 @@ jobs:
     name: Scan the wab application
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v2
         with:
           ref: master
       - name: ZAP Scan
-        uses: zapproxy/action-full-scan@v0.14.0
+        uses: zapproxy/action-baseline@v0.6.1
         with:
+          dockername: 'owasp/zap2docker-stable'
           target: 'http://testphp.vulnweb.com/'
           rules_file_name: '.zap/rules.tsv'
           cmd_options: '-a'
